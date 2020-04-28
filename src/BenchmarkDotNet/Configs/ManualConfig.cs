@@ -31,7 +31,7 @@ namespace BenchmarkDotNet.Configs
         private readonly List<IAnalyser> analysers = new List<IAnalyser>();
         private readonly List<IValidator> validators = new List<IValidator>();
         private readonly List<Job> jobs = new List<Job>();
-        private readonly HashSet<HardwareCounter> hardwareCounters = new HashSet<HardwareCounter>();
+        private readonly HashSet<HardwareCounterInfo> hardwareCounters = new HashSet<HardwareCounterInfo>();
         private readonly List<IFilter> filters = new List<IFilter>();
         private readonly List<BenchmarkLogicalGroupRule> logicalGroupRules = new List<BenchmarkLogicalGroupRule>();
         private readonly List<EventProcessor> eventProcessors = new List<EventProcessor>();
@@ -44,7 +44,7 @@ namespace BenchmarkDotNet.Configs
         public IEnumerable<IAnalyser> GetAnalysers() => analysers;
         public IEnumerable<IValidator> GetValidators() => validators;
         public IEnumerable<Job> GetJobs() => jobs;
-        public IEnumerable<HardwareCounter> GetHardwareCounters() => hardwareCounters;
+        public IEnumerable<HardwareCounterInfo> GetHardwareCounters() => hardwareCounters;
         public IEnumerable<IFilter> GetFilters() => filters;
         public IEnumerable<BenchmarkLogicalGroupRule> GetLogicalGroupRules() => logicalGroupRules;
         public IEnumerable<EventProcessor> GetEventProcessors() => eventProcessors;
@@ -191,9 +191,9 @@ namespace BenchmarkDotNet.Configs
 
         [EditorBrowsable(EditorBrowsableState.Never)]
         [Obsolete("This method will soon be removed, please start using ..AddHardwareCounters()() instead.")]
-        public void Add(params HardwareCounter[] newHardwareCounters) => AddHardwareCounters(newHardwareCounters);
+        public void Add(params HardwareCounterInfo[] newHardwareCounters) => AddHardwareCounters(newHardwareCounters);
 
-        public ManualConfig AddHardwareCounters(params HardwareCounter[] newHardwareCounters)
+        public ManualConfig AddHardwareCounters(params HardwareCounterInfo[] newHardwareCounters)
         {
             hardwareCounters.AddRange(newHardwareCounters);
             return this;

@@ -29,7 +29,7 @@ namespace BenchmarkDotNet.Configs
         private readonly ImmutableHashSet<IAnalyser> analysers;
         private readonly ImmutableHashSet<IValidator> validators;
         private readonly ImmutableHashSet<Job> jobs;
-        private readonly ImmutableHashSet<HardwareCounter> hardwareCounters;
+        private readonly ImmutableHashSet<HardwareCounterInfo> hardwareCounters;
         private readonly ImmutableHashSet<IFilter> filters;
         private readonly ImmutableArray<BenchmarkLogicalGroupRule> rules;
         private readonly ImmutableHashSet<EventProcessor> eventProcessors;
@@ -38,7 +38,7 @@ namespace BenchmarkDotNet.Configs
         internal ImmutableConfig(
             ImmutableArray<IColumnProvider> uniqueColumnProviders,
             ImmutableHashSet<ILogger> uniqueLoggers,
-            ImmutableHashSet<HardwareCounter> uniqueHardwareCounters,
+            ImmutableHashSet<HardwareCounterInfo> uniqueHardwareCounters,
             ImmutableHashSet<IDiagnoser> uniqueDiagnosers,
             ImmutableArray<IExporter> uniqueExporters,
             ImmutableHashSet<IAnalyser> uniqueAnalyzers,
@@ -97,7 +97,7 @@ namespace BenchmarkDotNet.Configs
         public IEnumerable<IAnalyser> GetAnalysers() => analysers;
         public IEnumerable<Job> GetJobs() => jobs;
         public IEnumerable<IValidator> GetValidators() => validators;
-        public IEnumerable<HardwareCounter> GetHardwareCounters() => hardwareCounters;
+        public IEnumerable<HardwareCounterInfo> GetHardwareCounters() => hardwareCounters;
         public IEnumerable<IFilter> GetFilters() => filters;
         public IEnumerable<BenchmarkLogicalGroupRule> GetLogicalGroupRules() => rules;
         public IEnumerable<EventProcessor> GetEventProcessors() => eventProcessors;

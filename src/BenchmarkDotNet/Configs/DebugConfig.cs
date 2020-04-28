@@ -61,7 +61,7 @@ namespace BenchmarkDotNet.Configs
         public IEnumerable<ILogger> GetLoggers() => new[] { ConsoleLogger.Default };
         public IEnumerable<IDiagnoser> GetDiagnosers() => Array.Empty<IDiagnoser>();
         public IEnumerable<IAnalyser> GetAnalysers() => Array.Empty<IAnalyser>();
-        public IEnumerable<HardwareCounter> GetHardwareCounters() => Array.Empty<HardwareCounter>();
+        public IEnumerable<HardwareCounterInfo> GetHardwareCounters() => Array.Empty<HardwareCounterInfo>();
         public IEnumerable<EventProcessor> GetEventProcessors() => Array.Empty<EventProcessor>();
         public IEnumerable<IFilter> GetFilters() => Array.Empty<IFilter>();
         public IEnumerable<IColumnHidingRule> GetColumnHidingRules() => Array.Empty<IColumnHidingRule>();

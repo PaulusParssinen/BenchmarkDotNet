@@ -80,7 +80,7 @@ namespace BenchmarkDotNet.Configs
             );
         }
 
-        private static ImmutableHashSet<IDiagnoser> GetDiagnosers(IEnumerable<IDiagnoser> diagnosers, ImmutableHashSet<HardwareCounter> uniqueHardwareCounters)
+        private static ImmutableHashSet<IDiagnoser> GetDiagnosers(IEnumerable<IDiagnoser> diagnosers, ImmutableHashSet<HardwareCounterInfo> uniqueHardwareCounters)
         {
             var builder = ImmutableHashSet.CreateBuilder(new TypeComparer<IDiagnoser>());
 
