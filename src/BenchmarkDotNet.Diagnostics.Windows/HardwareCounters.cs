@@ -33,9 +33,7 @@ namespace BenchmarkDotNet.Diagnostics.Windows
 
             foreach (var hardwareCounter in validationParameters.Config.GetHardwareCounters())
             {
-                if (!EtwTranslations.TryGetValue(hardwareCounter, out var counterName))
-                    yield return new ValidationError(true, $"Counter {hardwareCounter} not recognized. Please make sure that you are using counter available on your machine. You can get the list of available counters by running `tracelog.exe -profilesources Help`");
-
+                var counterName = hardwareCounter.Name;
                 if (!availableCpuCounters.ContainsKey(counterName))
                 {
                     hasCounterNamesNotMatching = true;
