@@ -77,6 +77,8 @@ namespace BenchmarkDotNet.Diagnosers
         {
             switch (counter)
             {
+                case HardwareCounter.NotSet:
+                    return default;
                 case HardwareCounter.Timer:
                     return Timer;
                 case HardwareCounter.TotalIssues:
